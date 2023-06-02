@@ -27,7 +27,7 @@ sed -i '27 i\uci uci set luci.main.mediaurlbase="/luci-static-argon/"\nuci commi
 # svn export https://github.com/karnadii/KarnadiWrt/trunk/amlogic-s9xxx/common-files/rootfs/etc/banner package/emortal/default-settings/files/openwrt_banner
 
 # Add the default password for the 'root' user（Change the empty password to 'password'）
-sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
+# sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
 
 # Set ssid
 sed -i "s/ImmortalWrt/KangrisWrt/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
@@ -47,7 +47,7 @@ sed -i "23 i\uci add_list firewall.@zone[1].network='wana'\nuci add_list firewal
 sed -i "s/\/bin\/ash/\/usr\/bin\/zsh/g" package/base-files/files/etc/passwd
 
 # Set php7 max_size
-sed -i -e "s/upload_max_filesize = 2M/upload_max_filesize = 1024M/g" -e "s/post_max_size = 8M/post_max_size = 1024M/g" feeds/packages/lang/php7/files/php.ini
+# sed -i -e "s/upload_max_filesize = 2M/upload_max_filesize = 1024M/g" -e "s/post_max_size = 8M/post_max_size = 1024M/g" feeds/packages/lang/php7/files/php.ini
 
 #=================================
 # Utility App
